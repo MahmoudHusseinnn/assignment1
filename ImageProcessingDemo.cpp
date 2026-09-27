@@ -73,7 +73,45 @@ void flip(Image& image) {
     }
    
 }
+void rotate_image(Image& image) {
+    int angle;
+    cout<<"Enter rotation angle(90, 180, or 270):";
+    cin>>angle;
+    if (angle == 90) {
+        Image rotated( image.height,image.width );
+        for (int i = 0; i < image.width; ++i) {
+            for (int j = 0; j < image.height; ++j) {
+                for (int k = 0; k < 3; ++k) {
+                    rotated.setPixel(image.height - 1 - j,i,k,image.getPixel(i,j,k));
+                    image = rotated;
 
+
+
+                            }
+                        }
+                    }
+                }else if (angle == 180) {
+                    Image rotated( image.width,image.height );
+                    for (int i = 0; i < image.width; ++i) {
+                        for (int j = 0; j < image.height; ++j) {
+                            for (int k = 0; k < 3; ++k) {
+                                rotated.setPixel(image.width - 1 - i, image.height - 1 - j,k,image.getPixel(i,j,k));
+                                image = rotated;
+                            }
+                        }
+                    }
+                }else if (angle == 270) {
+                    Image rotated( image.height,image.width );
+                    for (int i = 0; i < image.width; ++i) {
+                        for (int j = 0; j < image.height; ++j) {
+                            for (int k = 0; k < 3; ++k) {
+                                rotated.setPixel(j,image.width - 1 - i,k,image.getPixel(i,j,k));
+                                image = rotated;
+                            }
+                        }
+                    }
+                }
+            }
 
 int main() {
     string filename;
