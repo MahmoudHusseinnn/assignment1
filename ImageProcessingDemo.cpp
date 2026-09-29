@@ -120,7 +120,7 @@ void darken_lighten(Image& image) {
         for (int i = 0; i < image.height; ++i) {
             for (int j = 0; j < image.width; ++j) {
                 for (int k = 0; k < 3; ++k) {
-
+image[i][j][k] = image [i][j][k]-amount ;
                 }
             }
         }
@@ -128,7 +128,7 @@ void darken_lighten(Image& image) {
         for (int i = 0; i < image.height; ++i) {
             for (int j = 0; j < image.width; ++j) {
                 for (int k = 0; k < 3; ++k) {
-
+image[i][j][k] = image[i][j][k]+amount ;
                 }
             }
         }
