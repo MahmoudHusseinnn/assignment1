@@ -112,6 +112,30 @@ void rotate_image(Image& image) {
                     }
                 }
             }
+void darken_lighten(Image& image) {
+    int choise;
+    cout<<"Enter 1 for Darken or 2 for Lighten: ";
+    cin>>choice;
+    if (choice == 1) {
+        for (int i = 0; i < image.height; ++i) {
+            for (int j = 0; j < image.width; ++j) {
+                for (int k = 0; k < 3; ++k) {
+
+                }
+            }
+        }
+    }else if (choice == 2) {
+        for (int i = 0; i < image.height; ++i) {
+            for (int j = 0; j < image.width; ++j) {
+                for (int k = 0; k < 3; ++k) {
+
+                }
+            }
+        }
+    }
+}
+
+
 
 int main() {
     string filename;
@@ -125,7 +149,9 @@ int main() {
     cout << "2. Convert to Black and White\n";
     cout << "3. Invert Image\n";
     cout << "4. Merge Images\n";
-    cout << "Enter choice (1, 2, 3, or 4): ";
+    cout << "5. rotate image\n";
+    cout << "6. darken_lighten(image)\n";
+    cout << "Enter choice (1, 2, 3,4,5 or 6): ";
 
     int choice;
     cin >> choice;
@@ -136,17 +162,22 @@ int main() {
     } else if (choice == 2) {
         black_and_white(image);
         cout << "Image converted to Black and White successfully.\n";
-    
     } else if (choice == 3) {
         invert_image(image);
         cout << "Image inverted successfully.\n";
     } else if (choice == 4) {
         flip(image);
         cout << "Image flipped successfully.\n";
+    } else if (choice == 5) {
+        rotate_image(image);
+        cout << "Image rotated successfully.\n";
+    } else if (choice == 6) {
+        darken_lighten(image);
+        cout << "Darken image successfully.\n";
     } else {
-        cout << "Invalid choice!\n";
-        return 1;
+        cout << "Invalid choice.\n";
     }
+
 
     cout << "\nPls enter image name to store new image\n";
     cout << "and specify extension .jpg, .bmp, .png, .tga: ";
